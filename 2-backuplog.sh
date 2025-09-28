@@ -63,9 +63,8 @@ echo "old logs files are deleting :$oldlogfiles"
 rm -rf $oldlogfiles
 echo "deleted old logs :$oldlogfiles"
 done <<< $FILES
-
 else 
-echo "archived failed skipping "
+ echo "archived failed skipping "
 exit 1
 fi
 
