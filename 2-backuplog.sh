@@ -43,7 +43,7 @@ if [ ! -d $DEST_DIR ]; then
 FILES=$(find $SOURCE_DIR -type f -name '*.log' -mtime +14) 
 
 #check files are empty are not 
-if [ ! -z $FILES ]; then
+if [ ! -z "$FILES" ]; then
 echo " Files are found: $FILES"
 
 #if we found file then zip it,if you needs to zip the file we want file name
