@@ -23,7 +23,7 @@ SOURCE_DIR=/home/ec2-user/app_logs
 if [ ! -d $SOURCE_DIR ]; then
 echo "source directory is not available"
 exit 1
-
+fi
 #find the 14 days old logs and pass out put to other command in put
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -type f -name '*.log' -mtime +10)
