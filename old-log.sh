@@ -22,7 +22,7 @@ FILES_TO_DELETE=$(find $SOURCE_DIR -type f -name '*.log' -mtime +14)
 
 while IFS= read -r oldfiles
  do
- echo "previous old logs are $oldfiles
+ echo "previous old logs are $oldfiles"
  echo "old files are found and ready to delete"
  rm -rf $oldfiles
  echo "old 14 days logs are deleted"
