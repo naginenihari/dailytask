@@ -26,7 +26,7 @@ exit 1
 
 #find the 14 days old logs and pass out put to other command in put
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -type f -name '*.log' -mtime +14)
+FILES_TO_DELETE=$(find $SOURCE_DIR -type f -name '*.log' -mtime +10)
 
 #once we found the file then delete the file using while condition
  
