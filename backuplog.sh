@@ -45,27 +45,26 @@ fi
 FILES=$(find $SOURCE_DIR -type f -name '*.log' -mtime +$NO_DAYS)
 
 if [ ! -z "$FILES" ]; then
- echo "Files are Found: $FILES"
-TIMESTAMP=$(date +%F-%H-%M)
-ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+  echo "Files are Found: $FILES"
+ TIMESTAMP=$(date +%F-%H-%M)
+ ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
  echo "Zip file name: $ZIP_FILE_NAME"
- echo "find $SOURCE_DIR -type f -name '*.log' -mtime +$NO_DAYS |zip -@ -j "$ZIP_FILE_NAME"
+ echo "find $SOURCE_DIR -type f -name '*.log' -mtime +$NO_DAYS" |zip -@ -j "$ZIP_FILE_NAME"
 
  ### Check Archieval Success or not ###
-    if [ -f $ZIP_FILE_NAME ]; then
+         if [ -f $ZIP_FILE_NAME ]; then
         echo -e "Archeival ... $G SUCCESS $N"
-
-        ### Delete if success ###
-        while IFS= read -r filepath
-        do
+           ### Delete if success ###
+            while IFS= read -r filepath
+         do
             echo "Deleting the file: $filepath"
             rm -rf $filepath
             echo "Deleted the file: $filepath"
-        done <<< $FILES
-    else
+         done <<< $FILES
+     else
         echo -e "Archieval ... $R FAILURE $N"
         exit 1
-    fi
+   fi
  else
     echo -e "No files to archeive ... $Y SKIPPING $N"
 fi
