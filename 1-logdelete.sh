@@ -22,7 +22,7 @@ fi
 #find the 14 days old logs and pass out put to other command in put##
 FILES_TO_DELETE=$(find $SOURCE_DIR -type f -name '*.log' -mtime +10) 
 #once we found the file then delete the file using while condition##
-while IFS=read -s oldfiles; #reading the files line by line##
+while IFS=read -s oldfiles #reading the files line by line##
 do
 echo "deleting the $oldfiles" 
 rm -rf $oldfiles
