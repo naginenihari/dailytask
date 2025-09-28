@@ -11,6 +11,7 @@ echo "Script started executed at:$(date)" |tee -a $LOG_FILE
 if [ $USERID -ne 0 ]; then
 echo "Error:you don't have root priveleages"
 exit 1
+fi
 #define source directory path##
 SOURCE_DIR=/home/ec2-user/app_logs
 #check source directory exist or not#
