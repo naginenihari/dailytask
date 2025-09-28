@@ -24,7 +24,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 USAGE(){
-    echo -e "$R USAGE:: sudo sh 24-backup.sh <SOURCE_DIR> <DEST_DIR> <NO_DAYS> $N"
+    echo -e "$R USAGE:: sudo sh 2-backuplog.sh <SOURCE_DIR> <DEST_DIR> <NO_DAYS> $N"
     exit 1
 }
 
