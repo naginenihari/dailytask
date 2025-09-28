@@ -49,7 +49,8 @@ if [ ! -z "$FILES" ]; then
  TIMESTAMP=$(date +%F-%H-$M)
  ZIP_FILE_NAME='$DEST_DIR/app_logs-$TIMESTAMP.zip'
  echo "Zip file name: $ZIP_FILE_NAME"
- echo "$FILES" |zip -@ -j "$ZIP_FILE_NAME"
+ 
+ echo "$FILES"|zip -@ -j "$ZIP_FILE_NAME"
 
  if [ -f $ZIP_FILE_NAME ]; then
     echo -e "Archeival ... $G SUCCESS $N"
