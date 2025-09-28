@@ -44,30 +44,30 @@ FILES=$(find $SOURCE_DIR -type f -name '*.log' -mtime +14)
 
 #check files are empty are not 
 if [ ! -z "$FILES" ]; then
-echo " Files are found: $FILES"
+   echo " Files are found: $FILES"
 
 #if we found file then zip it,if you needs to zip the file we want file name
 TIMESTAMP=(date +%F-%H-%M)
 ZIP_FILE_NAME=$DEST_DIR/app_logs-$TIMESTAMP.zip
-echo "zip file name is: $ZIP_FILE_NAME"
+   echo "zip file name is: $ZIP_FILE_NAME"
 
 #check archival is success or not
- 
- if [ -f  $ZIP_FILE_NAME ]; then
- echo =e "$G Files are archived sucess $N "
+
+if [ -f  $ZIP_FILE_NAME ]; then
+   echo =e "$G Files are archived sucess $N "
 
 #once files are archived then delete the files in source directory
 while IFS= read -r oldlogfiles
 do
-echo "old logs files are deleting :$oldlogfiles"
-rm -rf $oldlogfiles
-echo "deleted old logs :$oldlogfiles"
+ echo "old logs files are deleting :$oldlogfiles"
+ rm -rf $oldlogfiles
+ echo "deleted old logs :$oldlogfiles"
 done <<< $FILES
 else 
  echo "archived failed skipping "
-exit 1
+ exit 1
 fi
 
 else 
-echo "no failes archived failed "
+ echo "no failes archived failed "
 fi
