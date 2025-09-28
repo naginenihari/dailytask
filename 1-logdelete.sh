@@ -20,7 +20,7 @@ SOURCE_DIR=/home/ec2-user/app_logs
 
 #check source directory exist or not
 
-if[ ! -d $SOURCE_DIR ]; then
+if [ ! -d $SOURCE_DIR ]; then
 echo "source directory is not available"
 exit 1
 
